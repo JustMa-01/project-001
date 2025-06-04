@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Card Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Interactive Card Generator</h1>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="imageUpload">1. Upload Photo:</label>
+                <input type="file" id="imageUpload" accept="image/*">
+            </div>
+             <div class="preview-container input-preview">
+                <h3>Original Preview:</h3>
+                <img id="originalPreview" src="#" alt="Original Preview" style="display:none;">
+            </div>
+
+            <div class="control-group">
+                <label for="wishesText">2. Wishes Text:</label>
+                <input type="text" id="wishesText" value="Happy Birthday">
+            </div>
+            <div class="control-group slider-group">
+                <label for="wishesFontSizeSlider">Wishes Font Size: <span id="wishesFontSizeValue">100</span>%</label>
+                <input type="range" id="wishesFontSizeSlider" min="50" max="200" value="100" step="10">
+            </div>
+
+            <div class="control-group">
+                <label for="textLines">Wishes Layout:</label>
+                <select id="textLines">
+                    <option value="single">Single Line</option>
+                    <option value="double" selected>Double Line</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="nameText">3. Name Text:</label>
+                <input type="text" id="nameText" placeholder="Your Friend's Name">
+            </div>
+            <div class="control-group slider-group">
+                <label for="nameFontSizeSlider">Name Font Size: <span id="nameFontSizeValue">100</span>%</label>
+                <input type="range" id="nameFontSizeSlider" min="50" max="200" value="100" step="10">
+            </div>
+
+            <div class="action-buttons">
+                <button id="generateButton" class="primary-action">✨ Generate Card</button>
+                <button id="regenerateButton" class="secondary-action" style="display:none;">🔄 Regenerate Style</button>
+            </div>
+        </div>
+
+        <div class="output-area">
+            <h2>Your Custom Card:</h2>
+            <div id="loadingIndicator" style="display:none;">
+                <div class="spinner"></div>
+                Processing... Please hold on!
+            </div>
+            <img id="outputImage" src="#" alt="Generated Card" style="display:none;">
+            <a id="downloadLink" href="#" download="custom_card.jpg" style="display:none;">
+                <button class="download-action">💾 Download Image (JPG)</button>
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
